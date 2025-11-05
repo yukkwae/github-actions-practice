@@ -1,0 +1,21 @@
+# workflow의 이름
+name: GithubActions 실행하기
+on:
+  push:
+    branches:
+      - main # - 하고 띄어쓰기
+
+jobs:
+  My-Deploy-Job:
+    runs-on: ubuntu-latest # : 하고 띄어쓰기 해야함
+    steps:
+      - name: Hello World  찍기
+        run: echo "Hello World" #tab 쓰면 안되고 spacebar 사용 해야한다.
+      - name: 여러 명령어 문장 작성하기
+        run: | # |를 쓰면 한문장으로 나온다.
+         echo "Good"
+         echo "Morning"
+      - name: Github Actions 자체에 저장되어 있는 변수 사용하기
+        run: |
+         echo $GITHUB_SHA
+         echo $GITHUB_REPOSITORY
